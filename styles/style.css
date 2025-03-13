@@ -72,3 +72,16 @@ padding: 30px;
   font-size: 1rem;
   background-color: var(--Orange);
 }
+
+.submit-btn:hover{
+  cursor: pointer;
+  background-color: var(--White);
+}
+
+.btns-wrapper button:hover{
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--VeryDarkBlue);
+  font-size: 1rem;
+  font-weight: 700;
+}
