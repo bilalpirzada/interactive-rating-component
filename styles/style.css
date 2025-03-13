@@ -8,6 +8,66 @@
 
 --White: hsl(0, 0%, 100%);
 --LightGrey: hsl(217, 12%, 63%);
+--LightBlue:hsl(212, 17%, 22%);
 --DarkBlue: hsl(213, 19%, 18%);
 --VeryDarkBlue: hsl(216, 12%, 8%);
+}
+
+body{
+  background-color: var(--VeryDarkBlue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+main{
+background-image: linear-gradient(hsl(213, 19%, 18%),hsla(213, 19%, 18%,.5));
+border-radius: 20px;
+max-width: 400px;
+display: flex;
+flex-direction: column;
+padding: 30px;
+}
+
+.rating-state{
+  margin-bottom: 30px;
+}
+
+.rating-state img{
+  background-color: var(--LightBlue);
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.title{
+  margin-bottom: 10px;
+}
+
+.text{
+  margin-bottom: 30px;
+}
+
+.btns-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.btns-wrapper button{
+  padding: 12px 20px;
+  border-radius: 100px;
+  border: none;
+  background-color: var(--LightBlue);
+  color: var(--White);
+}
+
+.submit-btn{
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--Orange);
 }
