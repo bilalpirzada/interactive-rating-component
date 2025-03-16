@@ -25,21 +25,18 @@
 <body>
 
 
-  <main>
+  <main class="root">
 
-    <!-- <div class="thankyou-screen">
-      <img src="./assets/images/illustration-thank-you.svg">
-      <div class="result-wrapper">
-        You selected 4 out of 5
-      </div>
-      <h1>
-        Thank you!
-      </h1>
-      <p class="text">We appreciate you taking the time to give a rating. If you ever need more support, 
-        don’t hesitate to get in touch!</p>
-    </div> -->
+   
 
-     <div class="rating-state">
+    
+  </main>
+
+
+  <script>
+    let selectedRating = null;
+
+    const ratingScreenHtml =` <div class="rating-state">
       <img src="./assets/images/icon-star.svg" alt="icon star image">
     </div>
 
@@ -58,12 +55,35 @@
       <button class="btn-5 js-rating-btn unselectedbtn">5</button>
     </div>
 
-    <button class="submit-btn">S U B M I T</button> 
-  </main>
+    <button class="submit-btn">S U B M I T</button>`;
+    
+   
 
+    
 
-  <script>
-    let selectedRating = null;
+    document.querySelector('.root').innerHTML = ratingScreenHtml;
+
+    document.querySelector('.submit-btn').addEventListener('click',()=>{
+      if(selectedRating){
+        const thankyouScreenHtml = `<div class="thankyou-screen">
+      <img src="./assets/images/illustration-thank-you.svg">
+      <div class="result-wrapper">
+        You selected ${selectedRating} out of 5
+      </div>
+      <h1>
+        Thank you!
+      </h1>
+      <p class="text">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </div>`;
+          document.querySelector('.root').innerHTML = thankyouScreenHtml;
+      }
+      else{
+        alert('select a rating first');
+      }
+    });
+
+    
 
     function toggleRatingBtn(btn, toggle) {
 
