@@ -1,61 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/style.css">
 
   <title>Interactive rating component</title>
+
+
 </head>
+
 <body>
 
-  
-  <main>
-     <div class="rating-state">
-        <img src="./assets/images/icon-star.svg" alt="icon star image">
-     </div>
-   
-    <h1 class="title">How did we do?</h1> 
 
-    <p class="text">
-      Please let us know how we did with your support request. All feedback is appreciated 
-      to help us improve our offering!
-    </p> 
-  
-    <div class="btns-wrapper">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
+  <main>
+    <div class="rating-state">
+      <img src="./assets/images/icon-star.svg" alt="icon star image">
     </div>
 
-  <button class="submit-btn">S U B M I T</button>
-    
-  
+    <h1 class="title">How did we do?</h1>
+
+    <p class="text">
+      Please let us know how we did with your support request. All feedback is appreciated
+      to help us improve our offering!
+    </p>
+
+    <div class="btns-wrapper">
+      <button class="btn-1 unselectedbtn">1</button>
+      <button class="btn-2 unselectedbtn">2</button>
+      <button class="btn-3 unselectedbtn">3</button>
+      <button class="btn-4 unselectedbtn">4</button>
+      <button class="btn-5 unselectedbtn">5</button>
+    </div>
+
+    <button class="submit-btn">S U B M I T</button>
+
+
     <!-- Rating state end -->
-  
+
     <!-- Thank you state start -->
-  
+
     <!-- You selected (Add rating here) out of 5 -->
-  
+
     <!-- Thank you!
   
     We appreciate you taking the time to give a rating. If you ever need more support, 
     don’t hesitate to get in touch! -->
-  
+
     <!-- Thank you state end -->
   </main>
-  
 
+
+  <script>
+    let selectedRating = null;
+
+    function toggleRatingBtn(btn, toggle) {
+
+      if (toggle === "select") {
+        btn.classList.add('selectedbtn');
+        btn.classList.remove('unselectedbtn');
+      }
+      else if (toggle === "unselect") {
+        btn.classList.remove('selectedbtn');
+        btn.classList.add('unselectedbtn');
+      }
+    }
+
+    function unselectPreviousRating() {
+      if (selectedRating) {
+        const selectedBtn = document.querySelector(`.btn-${selectedRating}`);
+        toggleRatingBtn(selectedBtn, 'unselect');
+      }
+
+    }
+
+
+    const btn1 = document.querySelector('.btn-1');
+    const btn2 = document.querySelector('.btn-2');
+    const btn3 = document.querySelector('.btn-3');
+    const btn4 = document.querySelector('.btn-4');
+    const btn5 = document.querySelector('.btn-5');
+
+    btn1.addEventListener('click', () => {
+      unselectPreviousRating();
+      selectedRating = 1;
+      toggleRatingBtn(btn1, 'select');
+    });
+
+
+    btn2.addEventListener('click', () => {
+      unselectPreviousRating();
+      selectedRating = 2;
+      toggleRatingBtn(btn2, 'select');
+    });
+
+
+    btn3.addEventListener('click', () => {
+      unselectPreviousRating();
+      selectedRating = 3;
+      toggleRatingBtn(btn3, 'select');
+    });
+
+    btn4.addEventListener('click', () => {
+      unselectPreviousRating();
+      selectedRating = 4;
+      toggleRatingBtn(btn4, 'select');
+    });
+
+    btn5.addEventListener('click', () => {
+      unselectPreviousRating();
+      selectedRating = 5;
+      toggleRatingBtn(btn5, 'select');
+    });
+
+
+
+
+  </script>
 </body>
+
 </html>

@@ -48,6 +48,7 @@ padding: 30px;
 
 .text{
   margin-bottom: 30px;
+  color: var(--LightGrey);
 }
 
 .btns-wrapper{
@@ -60,8 +61,6 @@ padding: 30px;
   padding: 12px 20px;
   border-radius: 100px;
   border: none;
-  background-color: var(--LightBlue);
-  color: var(--White);
 }
 
 .submit-btn{
@@ -73,6 +72,16 @@ padding: 30px;
   background-color: var(--Orange);
 }
 
+.selectedbtn{
+  background-color: var(--White);
+  color: var(--VeryDarkBlue);
+}
+
+.unselectedbtn{
+  background-color: var(--LightBlue);
+  color: var(--White);
+}
+
 .submit-btn:hover{
   cursor: pointer;
   background-color: var(--White);
@@ -80,7 +89,7 @@ padding: 30px;
 
 .btns-wrapper button:hover{
   cursor: pointer;
-  background-color: var(--White);
+  background-color: var(--Orange);
   color: var(--VeryDarkBlue);
   font-size: 1rem;
   font-weight: 700;
