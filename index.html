@@ -38,28 +38,14 @@
     </p>
 
     <div class="btns-wrapper">
-      <button class="btn-1 unselectedbtn">1</button>
-      <button class="btn-2 unselectedbtn">2</button>
-      <button class="btn-3 unselectedbtn">3</button>
-      <button class="btn-4 unselectedbtn">4</button>
-      <button class="btn-5 unselectedbtn">5</button>
+      <button class="btn-1 js-rating-btn unselectedbtn">1</button>
+      <button class="btn-2 js-rating-btn unselectedbtn">2</button>
+      <button class="btn-3 js-rating-btn unselectedbtn">3</button>
+      <button class="btn-4 js-rating-btn unselectedbtn">4</button>
+      <button class="btn-5 js-rating-btn unselectedbtn">5</button>
     </div>
 
     <button class="submit-btn">S U B M I T</button>
-
-
-    <!-- Rating state end -->
-
-    <!-- Thank you state start -->
-
-    <!-- You selected (Add rating here) out of 5 -->
-
-    <!-- Thank you!
-  
-    We appreciate you taking the time to give a rating. If you ever need more support, 
-    don’t hesitate to get in touch! -->
-
-    <!-- Thank you state end -->
   </main>
 
 
@@ -86,48 +72,14 @@
 
     }
 
-
-    const btn1 = document.querySelector('.btn-1');
-    const btn2 = document.querySelector('.btn-2');
-    const btn3 = document.querySelector('.btn-3');
-    const btn4 = document.querySelector('.btn-4');
-    const btn5 = document.querySelector('.btn-5');
-
-    btn1.addEventListener('click', () => {
-      unselectPreviousRating();
-      selectedRating = 1;
-      toggleRatingBtn(btn1, 'select');
-    });
-
-
-    btn2.addEventListener('click', () => {
-      unselectPreviousRating();
-      selectedRating = 2;
-      toggleRatingBtn(btn2, 'select');
-    });
-
-
-    btn3.addEventListener('click', () => {
-      unselectPreviousRating();
-      selectedRating = 3;
-      toggleRatingBtn(btn3, 'select');
-    });
-
-    btn4.addEventListener('click', () => {
-      unselectPreviousRating();
-      selectedRating = 4;
-      toggleRatingBtn(btn4, 'select');
-    });
-
-    btn5.addEventListener('click', () => {
-      unselectPreviousRating();
-      selectedRating = 5;
-      toggleRatingBtn(btn5, 'select');
-    });
-
-
-
-
+ document.querySelectorAll('.js-rating-btn').forEach((button,index)=>{
+  button.addEventListener('click',()=>{
+    unselectPreviousRating();
+      selectedRating = index+1;
+      toggleRatingBtn(button, 'select');
+  })
+  
+})
   </script>
 </body>
 
